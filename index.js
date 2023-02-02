@@ -1,6 +1,6 @@
 const rwClient = require('./twitterClient')
 const cron = require('cron')
-const randomTweet = require('./randomTweet')
+const randomTweet = require('./auxiliares/randomTweet')
 
 
 async function postTweet(text){
@@ -14,6 +14,6 @@ async function postTweet(text){
 
 const job = new cron.CronJob("0 */1 * * * *", async () => {
     const tweet = await randomTweet()
-    await postTweet(tweet)
+    await postTweet(tweet.substring(0,279))
 })
 job.start()
