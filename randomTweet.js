@@ -1,9 +1,9 @@
-const { openAIKey } = require('../env/env')
+const { openAIKey } = require('./env/env')
 const { Configuration, OpenAIApi } = require('openai')
 const fs = require('fs')
 
 
-const tweetsSource = JSON.parse(fs.readFileSync('../env/tweets2.txt', 'utf8'))
+const tweetsSource = JSON.parse(fs.readFileSync('./env/tweets.txt', 'utf8'))
 const configuration = new Configuration({ apiKey: openAIKey })
 const openai = new OpenAIApi(configuration)
 

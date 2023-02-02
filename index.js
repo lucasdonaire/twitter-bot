@@ -1,6 +1,6 @@
 const rwClient = require('./twitterClient')
 const cron = require('cron')
-const randomTweet = require('./auxiliares/randomTweet')
+const randomTweet = require('./randomTweet')
 
 
 async function postTweet(text){
