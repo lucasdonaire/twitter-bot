@@ -14,6 +14,9 @@ async function postTweet(text){
 
 const job = new cron.CronJob("0 */1 * * * *", async () => {
     const tweet = await randomTweet()
-    await postTweet(tweet.substring(0,279))
+    if(tweet !== ''){
+        await postTweet(tweet.substring(0,279))
+        console.log('postado.')
+    }
 })
 job.start()
